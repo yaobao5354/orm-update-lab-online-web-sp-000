@@ -7,7 +7,7 @@ class Student
     @id = id
     @name = name
     @grade = grade
-  end 
+  end
 
   def self.new_from_db(row)
     new_student = self.new
@@ -40,7 +40,7 @@ class Student
     VALUES (?, ?)
   SQL
 
-  DB[:conn].execute(sql, self.name, self.grade)
+  DB[:conn].execute(sql,self.id, self.name, self.grade)
   end
 
 end
